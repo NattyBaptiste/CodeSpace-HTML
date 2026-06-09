@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Average of Array Elements</title>
+
+    <script>
+        // Function to calculate the average of array elements
+        function calculateAverage() {
+
+            // Sample array provided in the question
+            var numbers = [20, 30, 25, 35, -16, 60, -100];
+
+            // Variable to store sum of array elements
+            var sum = 0;
+
+            // Loop through the array to calculate sum
+            for (var i = 0; i < numbers.length; i++) {
+                sum += numbers[i];
+            }
+
+            // Calculate average (sum divided by number of elements)
+            var average = sum / numbers.length;
+
+            // Display result on the webpage
+            document.getElementById("result").innerHTML =
+                "Average value of the array elements is : " + average + ".";
+
+            // Also print result in console (optional)
+            console.log("Average value of the array elements is : " + average + ".");
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Average of Array Elements</h2>
+
+    <!-- Button to trigger calculation -->
+    <button onclick="calculateAverage()">Calculate Average</button>
+
+    <h3>Result:</h3>
+
+    <!-- Output will be displayed here -->
+    <p id="result"></p>
+
+</body>
+</html>

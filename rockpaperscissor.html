@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors Game</title>
+
+    <style>
+        /* Simple styling for better appearance */
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #result {
+            font-size: 20px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        // Array containing possible choices
+        const choices = ["Rock", "Paper", "Scissors"];
+
+        // Function to get computer's random choice
+        function getComputerChoice() {
+            const randomIndex = Math.floor(Math.random() * choices.length);
+            return choices[randomIndex];
+        }
+
+        // Function to determine winner
+        function getResult(userChoice, computerChoice) {
+
+            // If both choices are same
+            if (userChoice === computerChoice) {
+                return "It's a Draw!";
+            }
+
+            // Winning conditions for user
+            if (
+                (userChoice === "Rock" && computerChoice === "Scissors") ||
+                (userChoice === "Paper" && computerChoice === "Rock") ||
+                (userChoice === "Scissors" && computerChoice === "Paper")
+            ) {
+                return "You Win!";
+            }
+
+            // Otherwise computer wins
+            return "Computer Wins!";
+        }
+
+        // Main function triggered by button click
+        function playGame(userChoice) {
+
+            // Get computer choice
+            const computerChoice = getComputerChoice();
+
+            // Get result
+            const result = getResult(userChoice, computerChoice);
+
+            // Display result in DOM
+            document.getElementById("result").innerHTML =
+                "You chose: " + userChoice + "<br>" +
+                "Computer chose: " + computerChoice + "<br><br>" +
+                result;
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Rock Paper Scissors Game</h1>
+
+    <!-- Buttons for user choices -->
+    <button onclick="playGame('Rock')">Rock</button>
+    <button onclick="playGame('Paper')">Paper</button>
+    <button onclick="playGame('Scissors')">Scissors</button>
+
+    <div id="result"></div>
+
+</body>
+</html>

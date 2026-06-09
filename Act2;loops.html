@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication Table</title>
+
+    <script>
+        // Function to generate multiplication table
+        function generateTable() {
+
+            // Get the number entered by the user and convert it to a Number type
+            var num = Number(document.getElementById("number").value);
+
+            // Get the output container
+            var output = document.getElementById("result");
+
+            // Clear previous results
+            output.innerHTML = "";
+
+            // Loop from 1 to 10 to generate multiplication table
+            for (var i = 1; i <= 10; i++) {
+
+                // Calculate result
+                var result = num * i;
+
+                // Display result on the webpage
+                output.innerHTML += num + " x " + i + " = " + result + "<br>";
+
+                // Also print in console (optional)
+                console.log(num + " x " + i + " = " + result);
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Multiplication Table Generator</h2>
+
+    <!-- Input field for number -->
+    Input a number:
+    <input type="number" id="number"><br><br>
+
+    <!-- Button to trigger table generation -->
+    <button onclick="generateTable()">Generate Table</button>
+
+    <h3>Output:</h3>
+
+    <!-- Result will be shown here -->
+    <p id="result"></p>
+
+</body>
+</html>
