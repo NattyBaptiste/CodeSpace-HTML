@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average of Array Elements</title>
+</head>
+<body>
+
+    <h2>Calculate Average of Array Elements</h2>
+
+    <!-- Paragraph where the result will be displayed -->
+    <p id="result"></p>
+
+    <script>
+        // Declare and initialize the sample array
+        const numbers = [20, 30, 25, 35, -16, 60, -100];
+
+        // Variable to store the sum of all array elements
+        let sum = 0;
+
+        // Loop through the array and add each element to sum
+        for (let i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
+        }
+
+        // Calculate the average
+        let average = sum / numbers.length;
+
+        // Display the result with one decimal place
+        document.getElementById("result").innerHTML =
+            "Average value of the array elements is : " +
+            average.toFixed(1);
+    </script>
+
+</body>
+</html>

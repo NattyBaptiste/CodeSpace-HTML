@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum of Array Values</title>
+
+    <script>
+        // Function to calculate the sum of array elements
+        function calculateSum() {
+
+            // Sample array as given in the question
+            var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+            // Variable to store the sum
+            var sum = 0;
+
+            // Loop through each element of the array
+            for (var i = 0; i < numbers.length; i++) {
+
+                // Add current element to sum
+                sum += numbers[i];
+            }
+
+            // Display result on the webpage
+            document.getElementById("result").innerHTML = "The sum is " + sum + ".";
+
+            // Also print result in console (optional)
+            console.log("The sum is " + sum + ".");
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Sum of Array Values</h2>
+
+    <!-- Button to trigger sum calculation -->
+    <button onclick="calculateSum()">Calculate Sum</button>
+
+    <h3>Result:</h3>
+
+    <!-- Output will be displayed here -->
+    <p id="result"></p>
+
+</body>
+</html>
